@@ -1,0 +1,13 @@
+version: '2.0'
+
+services:
+  appapi:
+    image: appapi
+    build: ./docker/node
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+    command: ["/opt/dev-tools/start.sh"]
+    volumes:
+      - ./www:/usr/src/app:z
