@@ -1,9 +1,3 @@
----
-title: Docker environment Application React and Node
-robots: noindex, nofollow
-description: This is an application example that is compose by API Rest Node and Express, API Client React and Webpack in DOCKER ENVIRONMENT.
----
-
 # Docker environment of Node Application + Express + React + Webpack-dev-serve
 
 
