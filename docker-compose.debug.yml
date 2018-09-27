@@ -1,0 +1,15 @@
+version: '2.0'
+
+services:
+  examentv:
+    image: examentv
+    build: ./docker/node
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3000:3000
+      - 9229:9229
+    volumes:
+      - ./www:/usr/src/app:z
+    ## set your startup file here
+    command: node --inspect index.js

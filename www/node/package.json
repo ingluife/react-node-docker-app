@@ -1,0 +1,30 @@
+{
+  "name": "api-nodejs",
+  "version": "1.0.0",
+  "description": "Node.js REST API",
+  "main": "app.js",
+  "scripts": {
+    "debug": "node debug app.js",
+    "start": "NODE_ENV=production node app.js",
+    "start:production": "NODE_ENV=production node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chai": "^4.2.0",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "mocha": "^5.2.0",
+    "tape": "^4.9.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.1",
+    "jest": "^22.4.0",
+    "supertest": "^3.3.0"
+  },
+  "engines": {
+    "node": ">=8.9"
+  },
+  "author": "Ing Luis Gonzalez",
+  "license": "ISC"
+}
