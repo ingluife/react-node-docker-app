@@ -4,7 +4,7 @@
   "description": "API Rest de prueba de React JS",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --host 0.0.0.0",
     "test": "jest"
   },
   "keywords": [

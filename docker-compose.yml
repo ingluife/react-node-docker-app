@@ -1,7 +1,7 @@
-version: '2.0'
+version: '2'
 
 services:
-  appapi:
+  nodeapi:
     image: appapi
     build: ./docker/node
     environment:
@@ -10,4 +10,34 @@ services:
       - 3000:3000
     command: ["/opt/dev-tools/start.sh"]
     volumes:
-      - ./www:/usr/src/app:z
+      - ./www/node:/usr/src/app:z
+    networks:
+      red-node:
+        aliases:
+          - apinode
+        ipv4_address: 172.28.0.30
+  reactapi:
+    image: appapi
+    build: ./docker/react
+    environment:
+      REACT_ENV: production
+    ports:
+      - 8080:8080
+    command: ["/opt/dev-tools/start.sh"]
+    volumes:
+      - ./www/react:/usr/src/app:z
+    networks:
+      red-node:
+        aliases:
+          - apireact
+        ipv4_address: 172.28.0.31
+# In this section we defined the network interface
+networks:
+  red-node:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "false"
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.28.0.0/24
